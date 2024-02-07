@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/barber-logo.png" />
+      </head>
       <body className={`${inter.className} dark`}>
         <AuthProvider>
           {children}
