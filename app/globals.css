@@ -39,9 +39,15 @@
 @layer base {
   * {
     @apply border-border;
-    @apply text-ellipsis text-nowrap;
   }
   body {
     @apply bg-background text-foreground antialiased;
+
+    h2,
+    p,
+    h1 {
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+    }
   }
 }
