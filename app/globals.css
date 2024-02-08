@@ -39,6 +39,7 @@
 @layer base {
   * {
     @apply border-border;
+    @apply text-ellipsis text-nowrap;
   }
   body {
     @apply bg-background text-foreground antialiased;
