@@ -22,9 +22,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/barber-logo.png" />
       </head>
-      <body className={`${inter.className} dark`}>
+      <body className={`${inter.className} dark h-screen flex flex-col`}>
         <AuthProvider>
-          {children}
+          <div className="flex flex-col flex-1">{children}</div>
           <Toaster />
           <Footer />
         </AuthProvider>
