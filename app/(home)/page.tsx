@@ -1,7 +1,7 @@
 import Header from "../_components/header";
 import { format, isFuture } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import Search from "./_components/search";
+import Search from "../_components/search";
 import BookingItem from "../_components/booking-item";
 import BarberShopItem from "./_components/barbershop-item";
 import { db } from "../_lib/prisma";
@@ -53,7 +53,7 @@ export default async function Home() {
         </p>
       </div>
       <div className="px-5 mt-6">
-        <Search />
+        <Search/>
       </div>
 
       <div className="mt-6">
@@ -77,7 +77,9 @@ export default async function Home() {
 
         <div className="px-5 flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden ">
           {barbershops.map((barbershop) => (
-            <BarberShopItem key={barbershop.id} barbershop={barbershop} />
+            <div key={barbershop.id} className="min-w-[167px] max-w-[167px]">
+              <BarberShopItem barbershop={barbershop} />
+            </div>
           ))}
         </div>
       </div>
@@ -89,7 +91,9 @@ export default async function Home() {
 
         <div className="px-5 flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden mb-[4.5rem]">
           {barbershops.map((barbershop) => (
-            <BarberShopItem key={barbershop.id} barbershop={barbershop} />
+            <div key={barbershop.id} className="min-w-[167px] max-w-[167px]">
+              <BarberShopItem barbershop={barbershop} />
+            </div>
           ))}
         </div>
       </div>

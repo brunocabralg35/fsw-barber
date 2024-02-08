@@ -12,6 +12,7 @@ import { Button } from "./ui/button";
 import { SheetHeader, SheetTitle } from "./ui/sheet";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { AvatarFallback } from "@radix-ui/react-avatar";
 
 const SideMenu = () => {
   const { data, status } = useSession();
@@ -31,6 +32,7 @@ const SideMenu = () => {
           <div className="flex items-center gap-3 ">
             <Avatar>
               <AvatarImage src={data.user?.image ?? ""} />
+              <AvatarFallback>{data.user?.name as string}</AvatarFallback>
             </Avatar>
             <h2 className="font-bold">{data.user?.name}</h2>
           </div>
