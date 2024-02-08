@@ -34,7 +34,10 @@ export default async function Home() {
       <Header />
 
       <div className="px-5 pt-5">
-        <h2 className="text-xl font-bold">Olá, Miguel!</h2>
+        <h2 className="text-xl font-bold">
+          Olá,{" "}
+          {session?.user?.name ? session?.user?.name.split(" ")[0] : "Anônimo"}!
+        </h2>
         <p className="text-sm">
           <span className="capitalize mr-1">
             {format(new Date(), "EEEE", {
@@ -52,9 +55,11 @@ export default async function Home() {
       </div>
 
       <div className="mt-6">
-        <h2 className="px-5 text-xs uppercase text-gray-400 font-bold mb-3">
-          Agendamentos
-        </h2>
+        {confirmedBookings.length > 0 && (
+          <h2 className="px-5 text-xs uppercase text-gray-400 font-bold mb-3">
+            Agendamentos
+          </h2>
+        )}
 
         <div className="px-5 mt-6 flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {confirmedBookings.map((booking) => (
